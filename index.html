@@ -1,0 +1,93 @@
+<!--
+    Title: BookList
+    Author: Giuseppe Garone
+
+    Description: This simple app allows to create a list of books. Click "New book",
+    fill the form and then the book will be added to the list. The list is displayed
+    below the form.
+
+    Technologies: This app is made with HTML5, CSS3 and JavaScript. To store the list
+    of books, I used the HTML5 localStorage. I didn't use any external library, such as
+    jQuery or Bootstrap. The interface is responsive, but the layout is vertical for 
+    both mobile and desktop screen. The main goal of this project was to practice some
+    JavaScript and understand how localStorage works.
+
+    Created: March 8, 2018
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BookList</title>
+  <link rel="shortcut icon" href="res/favicon.ico">
+  <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma:400,600">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header-section fixed-width">
+    <h1>BookList</h1>
+    <p>
+      With this app you can create a list of books. Click "New book" to create a new book, then fill the form with 
+      book's information (title, author, year, ISBN and category). The new book will be displayed on the list. If 
+      you want to know more information about a book, just click the circle icon on the right side. To remove a book, 
+      just click the red cross.
+    </p>
+  </header>
+  <section class="form-section fixed-width">
+    <button id="new-book-btn" class="generic-button">New book</button>
+    <form id="new-book-form">
+      <p>
+        <input id="new-book-title" class="user-input" type="text" placeholder="Title">
+      </p>
+      <p>
+        <input id="new-book-author" class="user-input" type="text" placeholder="Author">
+      </p>
+      <p>
+        <input id="new-book-year" class="user-input" type="text" placeholder="Year">
+      </p>
+      <p>
+        <input id="new-book-isbn" class="user-input" type="text" placeholder="ISBN-10 or ISBN-13">
+      </p>
+      <p>
+        <select id="new-book-category" class="user-input">
+          <option value="" disabled selected>Select a category</option>
+          <option value="arts-and-music">Arts &amp; Music</option>
+          <option value="biography">Biography</option>
+          <option value="business">Business</option>
+          <option value="cooking">Cooking</option>
+          <option value="educational">Educational</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="health-and-fitness">Health &amp; Fitness</option>
+          <option value="history">History</option>
+          <option value="horror">Horror</option>
+          <option value="kids">Kids</option>
+          <option value="literature">Literature</option>
+          <option value="medical">Medical</option>
+          <option value="mysteries">Mysteries</option>
+          <option value="political-affairs">Political affairs</option>
+          <option value="religion">Religion</option>
+          <option value="romance">Romance</option>
+          <option value="science-and-math">Science &amp; Math</option>
+          <option value="social-sciences">Social Sciences</option>
+          <option value="sports">Sports</option>
+          <option value="technolgy">Technology</option>
+        </select>
+      </p>
+      <button id="add-book-btn" type="submit" class="generic-button">Add book</button>
+      <div id="error-message" class="error-message"></div>
+    </form>
+  </section>
+  <section class="book-list-section fixed-width">
+    <ul id="book-list"></ul>
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>
